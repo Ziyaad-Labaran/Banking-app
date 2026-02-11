@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme Defaults */
+  --color-primary: #FF4800;
+  --color-dark: #242526;
+  --color-text: #333333;
+  --color-text-secondary: #666666;
+  --color-bg-light: #ffffff;
+  --color-bg-page: #f7f9fa;
+  --color-border: #e0e0e0;
+  --color-card-bg: #ffffff;
+  --font-family: 'Inter', sans-serif;
+  --radius-md: 8px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Theme Overrides - applied when body has .dark-mode class */
+body.dark-mode {
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-bg-light: #0f172a;
+  /* Main background */
+  --color-bg-page: #0f172a;
+  /* Dashboard background */
+  --color-border: #334155;
+  --color-card-bg: #1e293b;
+  /* Card background */
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Common utility for cards to respect theme */
+.card,
+.balance-section,
+.transaction-section,
+.settings-header,
+.settings-group,
+.profile-header,
+.profile-section,
+.bottom-nav {
+  background-color: var(--color-card-bg);
+  transition: background-color 0.3s;
+}
+
+/* Adjust toggle switch for dark mode */
+body.dark-mode .toggle-switch {
+  background-color: #475569;
+}
+
+body.dark-mode .toggle-switch.active {
+  background-color: var(--color-primary);
+}
+
+body.dark-mode .toggle-thumb {
+  background-color: #e2e8f0;
+}
+
+/* Input fields dark mode */
+body.dark-mode input {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+/* Bottom nav dark mode tweaks */
+body.dark-mode .bottom-nav {
+  border-top-color: var(--color-border);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

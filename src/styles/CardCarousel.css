@@ -1,0 +1,107 @@
+.card-section {
+    margin: 24px 0;
+}
+
+.section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+.card-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    gap: 16px;
+    padding-right: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+}
+
+.card-carousel::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+}
+
+.bank-card {
+    flex: 0 0 280px;
+    height: 170px;
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    position: relative;
+    overflow: hidden;
+}
+
+.bank-card.bg-black {
+    background: #1e1e1e;
+}
+
+.bank-card.bg-blue {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-type {
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    opacity: 0.8;
+}
+
+.card-number {
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+.card-expiry {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.75rem;
+}
+
+.card-expiry span {
+    opacity: 0.7;
+    margin-bottom: 2px;
+}
+
+.add-card-btn {
+    flex: 0 0 80px;
+    height: 170px;
+    border-radius: 20px;
+    border: 2px dashed #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #64748b;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+
+.add-card-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: #fff7ed;
+}
+
+.add-card-btn span {
+    font-size: 0.75rem;
+    font-weight: 500;
+}

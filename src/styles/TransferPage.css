@@ -1,0 +1,128 @@
+.transfer-page {
+    padding: 16px;
+    background-color: var(--color-bg-page);
+    min-height: 100vh;
+}
+
+.transfer-card {
+    background-color: var(--color-card-bg);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+}
+
+.amount-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.amount-input-wrapper label {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+}
+
+.currency-input {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.currency-symbol {
+    opacity: 0.5;
+    margin-right: 4px;
+}
+
+.amount-field {
+    width: 200px;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: center;
+    background: transparent;
+    color: var(--color-text);
+    outline: none;
+    padding: 0;
+}
+
+.error-text {
+    font-size: 0.75rem;
+    color: #ef4444;
+    margin-top: 8px;
+}
+
+.recipient-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.recipient-section h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.note-section {
+    margin-bottom: 32px;
+}
+
+.transfer-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.transfer-actions button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.125rem;
+}
+
+/* Success State */
+.transfer-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-bg-page);
+    text-align: center;
+    padding: 32px;
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #10B981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+.transfer-success h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.transfer-success p {
+    color: var(--color-text-secondary);
+    margin-bottom: 48px;
+}
+
+.mt-8 {
+    margin-top: 32px;
+    width: 100%;
+}

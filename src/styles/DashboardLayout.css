@@ -1,0 +1,21 @@
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f7f9fa;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 16px;
+    padding-bottom: 96px;
+    /* Space for bottom nav */
+    overflow-y: auto;
+}
+
+/* Hide desktop styles for now or minimal desktop layout */
+@media (max-width: 768px) {
+    .dashboard-content {
+        padding-bottom: 96px;
+    }
+}

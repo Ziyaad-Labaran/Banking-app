@@ -1,0 +1,75 @@
+.left-panel {
+    flex: 1;
+    background-color: #0F172A;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.left-panel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, #1E293B, #0F172A);
+    z-index: 0;
+}
+
+.left-panel-content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.text-highlight {
+    background: linear-gradient(135deg, #FF4800 0%, #FF8C00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: #94A3B8;
+    margin-bottom: 3rem;
+    max-width: 80%;
+}
+
+.mockup-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+    transition: transform 0.5s ease;
+}
+
+.mockup-wrapper:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+@media (max-width: 768px) {
+    .left-panel {
+        display: none;
+        /* Hide on mobile as per prompt saying less prominent, effectively stacking or hiding */
+    }
+}

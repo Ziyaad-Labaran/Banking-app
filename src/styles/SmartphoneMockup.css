@@ -1,0 +1,319 @@
+.phone-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 100%;
+}
+
+.phone-frame {
+    position: relative;
+    width: 300px;
+    height: 580px;
+    background-color: #1a1a1a;
+    border-radius: 40px;
+    border: 12px solid #2a2a2a;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background-color: #2a2a2a;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    z-index: 20;
+}
+
+.phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 5px;
+}
+
+.app-status {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.battery-icon {
+    width: 20px;
+    height: 10px;
+    border: 1px solid #1a1a1a;
+    border-radius: 2px;
+    position: relative;
+}
+
+.battery-icon::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 14px;
+    height: 6px;
+    background-color: #1a1a1a;
+}
+
+.app-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.app-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #E2E8F0;
+    border: 2px solid white;
+}
+
+.nav-greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.nav-greeting span {
+    font-size: 12px;
+    color: #64748B;
+}
+
+.nav-greeting strong {
+    font-size: 14px;
+    color: #0F172A;
+}
+
+.nav-bell {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #FF4800 0%, #FF7F50 100%);
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(255, 72, 0, 0.2);
+}
+
+.balance-label {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.balance-amount {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+}
+
+.balance-growth {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.action-btn span {
+    font-size: 12px;
+    color: #475569;
+    font-weight: 500;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.section-header span {
+    font-size: 12px;
+    color: #FF4800;
+}
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #F1F5F9;
+}
+
+.activity-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background-color: #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.activity-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.activity-date {
+    font-size: 11px;
+    color: #64748B;
+}
+
+.activity-amount {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.activity-amount.negative {
+    color: #0F172A;
+}
+
+.activity-amount.positive {
+    color: #10B981;
+}
+
+.app-bottom-nav {
+    height: 60px;
+    background-color: white;
+    border-top: 1px solid #E2E8F0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background-color: #CBD5E1;
+}
+
+.nav-item.active {
+    background-color: #FF4800;
+}
+
+.chart-preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 60px;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+.chart-bar {
+    width: 6px;
+    background-color: #E2E8F0;
+    border-radius: 3px;
+}
+
+.chart-bar.active {
+    background-color: #FF4800;
+}
+
+.glow-effect {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+}
+
+.glow-1 {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(255, 72, 0, 0.15);
+    top: 10%;
+    right: -20px;
+}
+
+.glow-2 {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(59, 130, 246, 0.1);
+    bottom: 10%;
+    left: -40px;
+}

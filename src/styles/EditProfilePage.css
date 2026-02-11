@@ -1,0 +1,91 @@
+.edit-profile-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 16px;
+    background-color: var(--color-bg-page);
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.header-nav h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.back-btn {
+    padding: 8px;
+    margin-left: -8px;
+    color: var(--color-text);
+}
+
+.edit-avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.avatar-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF4800 0%, #FF8C00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(255, 72, 0, 0.4);
+}
+
+.change-photo-btn {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    padding: 8px 16px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 80px;
+    /* Space for fixed button */
+}
+
+.form-actions-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: var(--color-card-bg);
+    border-top: 1px solid var(--color-border);
+    z-index: 50;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+
+@media (min-width: 768px) {
+    .edit-profile-page {
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 24px;
+        min-height: auto;
+    }
+
+    .form-actions-fixed {
+        position: static;
+        background: none;
+        padding: 24px 0 0;
+        border: none;
+    }
+}
