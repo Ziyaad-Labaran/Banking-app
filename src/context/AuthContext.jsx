@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = (username, password) => {
         // Professional validation logic
-        if (username === 'Salim123' && password === '505090') {
+        if (username === 'NCoolidge' && password === '@Noreen90') {
             setIsAuthenticated(true);
             sessionStorage.setItem('isLoggedIn', 'true');
             return true;
