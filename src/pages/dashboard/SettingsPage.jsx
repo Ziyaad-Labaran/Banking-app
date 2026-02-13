@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Bell, Lock, User, Globe, Moon, ChevronRight, Headphones, HelpCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
+import LanguageSelector from '../../components/LanguageSelector';
 import '../../styles/SettingsPage.css';
 
 const ToggleSwitch = ({ isOn, onToggle }) => (
@@ -38,6 +40,7 @@ const SettingItem = ({ icon: Icon, label, desc, action, type = 'toggle', isOn, o
 
 const SettingsPage = () => {
     const navigate = useNavigate();
+    const { t } = useLanguage();
     const [settings, setSettings] = useState({
         pushNotifications: true,
         emailNotifications: false,
@@ -66,28 +69,37 @@ const SettingsPage = () => {
     return (
         <div className="settings-page">
             <div className="settings-header">
-                <h1 className="settings-title">Settings</h1>
+                <h1 className="settings-title">{t('settings')}</h1>
                 <p className="settings-subtitle">Manage preferences and account security</p>
             </div>
 
             <div className="settings-group">
-                <div className="group-header">General</div>
+                <div className="group-header">{t('general')}</div>
                 <SettingItem
                     icon={User}
-                    label="Edit Profile"
+                    label={t('editProfile')}
                     desc="Update personal information"
                     type="nav"
                     onClick={handleEditProfile}
                 />
-                <SettingItem
-                    icon={Globe}
-                    label="Language"
-                    desc="English (US)"
-                    type="nav"
-                />
+                <div className="setting-item">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                        <div style={{
+                            width: '40px', height: '40px', borderRadius: '10px',
+                            backgroundColor: 'var(--color-border)', display: 'flex', alignItems: 'center',
+                            justifyContent: 'center', color: 'var(--color-text-secondary)'
+                        }}>
+                            <Globe size={20} />
+                        </div>
+                        <div className="setting-info">
+                            <span className="setting-label">{t('language')}</span>
+                        </div>
+                    </div>
+                    <LanguageSelector />
+                </div>
                 <SettingItem
                     icon={Moon}
-                    label="Dark Mode"
+                    label={t('darkMode')}
                     desc="Toggle dark theme"
                     type="toggle"
                     isOn={settings.darkMode}
@@ -96,7 +108,7 @@ const SettingsPage = () => {
             </div>
 
             <div className="settings-group">
-                <div className="group-header">Notifications</div>
+                <div className="group-header">{t('notifications')}</div>
                 <SettingItem
                     icon={Bell}
                     label="Push Notifications"
@@ -116,7 +128,7 @@ const SettingsPage = () => {
             </div>
 
             <div className="settings-group">
-                <div className="group-header">Security</div>
+                <div className="group-header">{t('security')}</div>
                 <SettingItem
                     icon={Lock}
                     label="Change Password"
@@ -134,7 +146,7 @@ const SettingsPage = () => {
             </div>
 
             <div className="settings-group">
-                <div className="group-header">Support</div>
+                <div className="group-header">{t('support')}</div>
                 <SettingItem
                     icon={Headphones}
                     label="Contact Support"

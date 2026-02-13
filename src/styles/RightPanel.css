@@ -26,23 +26,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
     margin-bottom: 2rem;
 }
 
-.logo-text {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-secondary);
-    letter-spacing: -0.05em;
-}
-
-.logo-dot {
-    width: 8px;
-    height: 8px;
-    background-color: var(--color-primary);
-    border-radius: 50%;
-    margin-top: 8px;
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 .auth-title {

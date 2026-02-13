@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Globe, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import '../styles/LanguageSelector.css';
 
 const languages = [
@@ -12,7 +13,9 @@ const languages = [
 
 const LanguageSelector = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selected, setSelected] = useState(languages[0]);
+    const { language, changeLanguage } = useLanguage();
+
+    const selected = languages.find(l => l.code === language) || languages[0];
 
     return (
         <div className="language-selector">
@@ -32,10 +35,10 @@ const LanguageSelector = () => {
                         <button
                             key={lang.code}
                             onClick={() => {
-                                setSelected(lang);
+                                changeLanguage(lang.code);
                                 setIsOpen(false);
                             }}
-                            className={`lang-option ${selected.code === lang.code ? 'active' : ''}`}
+                            className={`lang-option ${language === lang.code ? 'active' : ''}`}
                         >
                             {lang.label}
                         </button>

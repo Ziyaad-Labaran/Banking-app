@@ -1,8 +1,10 @@
 import React from 'react';
 import { User, Bell, Shield, HelpCircle, ChevronRight, LogOut, CreditCard, Settings } from 'lucide-react';
+import { useUser } from '../../context/UserContext';
 import '../../styles/ProfilePage.css';
 
 const ProfilePage = () => {
+    const { user } = useUser();
     const handleLogout = () => {
         // Implement logout logic here
         console.log('Logging out...');
@@ -38,10 +40,14 @@ const ProfilePage = () => {
         <div className="profile-page">
             <div className="profile-header">
                 <div className="profile-avatar">
-                    <span>NC</span>
+                    {user.avatar ? (
+                        <img src={user.avatar} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }} />
+                    ) : (
+                        <span>{user.fullName.split(' ').map(n => n[0]).join('')}</span>
+                    )}
                 </div>
-                <h2 className="profile-name">Noreen Coolidge</h2>
-                <div className="profile-email">Noreen Coolidge@gmail.com</div>
+                <h2 className="profile-name">{user.fullName}</h2>
+                <div className="profile-email">{user.jobTitle}</div>
                 <div className="profile-badge">Verified Member</div>
             </div>
 

@@ -18,7 +18,7 @@
 }
 
 .lang-btn:hover {
-    background-color: #f3f4f6;
+    background-color: var(--color-border);
     color: var(--color-text);
 }
 
@@ -32,23 +32,22 @@
 
 .lang-menu {
     position: absolute;
-    bottom: 100%;
-    left: 0;
-    margin-bottom: 0.5rem;
-    min-width: 10rem;
-    background-color: white;
+    bottom: 110%;
+    right: 0;
+    min-width: 140px;
+    background-color: var(--color-bg-page);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     overflow: hidden;
-    z-index: 50;
+    z-index: 100;
     animation: slideIn 0.2s ease-out;
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(0.5rem);
+        transform: translateY(10px);
     }
 
     to {
@@ -60,22 +59,28 @@
 .lang-option {
     display: block;
     width: 100%;
-    padding: 0.625rem 1rem;
+    padding: 10px 16px;
     text-align: left;
     font-size: 0.875rem;
     color: var(--color-text);
     background: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.15s;
+    transition: all 0.15s;
 }
 
 .lang-option:hover {
-    background-color: #f9fafb;
+    background-color: var(--color-border);
 }
 
 .lang-option.active {
     color: var(--color-primary);
-    background-color: #fff7ed;
-    font-weight: 500;
+    background-color: rgba(0, 163, 173, 0.05);
+    font-weight: 600;
+}
+
+/* Adjust for Settings Page where menu should drop down */
+.settings-group .lang-menu {
+    bottom: auto;
+    top: 110%;
 }

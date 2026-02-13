@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
 import Input from './Input';
 import Button from './Button';
 import LanguageSelector from './LanguageSelector';
@@ -13,6 +14,7 @@ const RightPanel = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const { login } = useAuth();
+    const { t } = useLanguage();
 
     // Check if we were redirected with a message
     const redirectMessage = location.state?.message;
@@ -33,10 +35,9 @@ const RightPanel = () => {
             <div className="auth-container">
                 <div className="auth-header">
                     <div className="logo">
-                        <span className="logo-text">First Third Bank</span>
-                        <div className="logo-dot"></div>
+                        <img src="/Fifth-Third-Emblem.png" alt="Fifth Third Bank" className="logo-img" />
                     </div>
-                    <h2 className="auth-title">Sign In</h2>
+                    <h2 className="auth-title">{t('signIn')}</h2>
                 </div>
 
                 {redirectMessage && (
@@ -63,33 +64,33 @@ const RightPanel = () => {
 
                 <form onSubmit={handleSubmit(onSubmit)} className="auth-form">
                     <Input
-                        label="Email or Username"
-                        placeholder="Enter Username or email"
-                        {...register('email', { required: 'Email or Username is required' })}
-                        error={errors.email?.message}
+                        label={t('username')}
+                        placeholder={t('usernamePlaceholder')}
+                        {...register('email', { required: true })}
+                        error={errors.email && t('usernameRequired')}
                     />
 
                     <Input
-                        label="Password"
+                        label={t('password')}
                         type="password"
-                        placeholder="Enter your password"
-                        {...register('password', { required: 'Password is required' })}
-                        error={errors.password?.message}
+                        placeholder={t('passwordPlaceholder')}
+                        {...register('password', { required: true })}
+                        error={errors.password && t('passwordRequired')}
                     />
 
                     <div className="form-actions">
                         <Button type="submit" variant="primary">
-                            Sign In
+                            {t('signIn')}
                         </Button>
                     </div>
 
                     <div className="form-footer">
-                        <a href="#" className="forgot-password">Forgot password?</a>
+                        <a href="#" className="forgot-password">{t('forgotPassword')}</a>
                     </div>
                 </form>
 
                 <div className="auth-footer-links">
-                    <a href="#">Contact Us</a>
+                    <a href="#">{t('contactUs')}</a>
                     <span className="divider">•</span>
                     <LanguageSelector />
                 </div>
