@@ -41,15 +41,17 @@ const SettingsPage = () => {
     const [settings, setSettings] = useState({
         pushNotifications: true,
         emailNotifications: false,
-        darkMode: document.body.classList.contains('dark-mode'),
+        darkMode: localStorage.getItem('theme') === 'dark',
         biometricLogin: true,
     });
 
     useEffect(() => {
         if (settings.darkMode) {
             document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
         } else {
             document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
         }
     }, [settings.darkMode]);
 

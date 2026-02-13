@@ -5,7 +5,7 @@
 }
 
 .settings-header {
-    background-color: white;
+    background-color: var(--color-card-bg);
     padding: 24px;
     border-radius: 20px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -24,7 +24,7 @@
 }
 
 .settings-group {
-    background-color: white;
+    background-color: var(--color-card-bg);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -47,7 +47,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 16px 24px;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .setting-item:last-child {

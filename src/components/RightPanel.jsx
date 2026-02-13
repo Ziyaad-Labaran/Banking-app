@@ -16,7 +16,7 @@ const RightPanel = () => {
         if (data.email === 'Salim123' && data.password === '505090') {
             setLoginError('');
             // Simulate successful login
-            // alert('Login Successful! Welcome Jessica.');
+            // alert('Login Successful! Welcome Noreen.');
             console.log('Login successful:', data);
             navigate('/dashboard');
         } else {
@@ -29,7 +29,7 @@ const RightPanel = () => {
             <div className="auth-container">
                 <div className="auth-header">
                     <div className="logo">
-                        <span className="logo-text">Payoneer</span>
+                        <span className="logo-text">First Third Bank</span>
                         <div className="logo-dot"></div>
                     </div>
                     <h2 className="auth-title">Sign In</h2>

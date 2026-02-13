@@ -2,7 +2,7 @@
 
 :root {
   /* Light Theme Defaults */
-  --color-primary: #FF4800;
+  --color-primary: #3b82f6;
   --color-dark: #242526;
   --color-text: #333333;
   --color-text-secondary: #666666;
@@ -14,19 +14,17 @@
   --radius-md: 8px;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --transition-speed: 0.3s;
 }
 
-/* Dark Theme Overrides - applied when body has .dark-mode class */
+/* Dark Theme Overrides */
 body.dark-mode {
-  --color-text: #f1f5f9;
+  --color-text: #eeeeee;
   --color-text-secondary: #94a3b8;
-  --color-bg-light: #0f172a;
-  /* Main background */
-  --color-bg-page: #0f172a;
-  /* Dashboard background */
-  --color-border: #334155;
-  --color-card-bg: #1e293b;
-  /* Card background */
+  --color-bg-light: #121212;
+  --color-bg-page: #121212;
+  --color-border: #2d2d2d;
+  --color-card-bg: #1e1e1e;
   background-color: var(--color-bg-page);
   color: var(--color-text);
 }
@@ -35,6 +33,7 @@ body.dark-mode {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
 body {

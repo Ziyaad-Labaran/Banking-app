@@ -20,11 +20,21 @@
   <path d="M-10 100 Q 170 130 350 100" stroke="#4caf50" stroke-width="8" fill="none" opacity="0.9" />
   <path d="M-10 112 Q 170 142 350 112" stroke="#00509e" stroke-width="4" fill="none" opacity="0.7" />
 
-  <!-- 5/3 Logo Area -->
-  <rect x="25" y="25" width="40" height="40" rx="4" fill="#003366" stroke="#ffffff" stroke-width="2" />
-  <rect x="23" y="23" width="44" height="44" rx="6" stroke="#2dbf5b" stroke-width="2" fill="none" />
-  <text x="45" y="52" font-family="serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">5/3</text>
-  <text x="45" y="80" font-family="serif" font-size="9" fill="white" text-anchor="middle" letter-spacing="0.5">FIFTH THIRD BANK</text>
+  <!-- 5/3 Logo -->
+  <g transform="translate(30, 20) scale(0.45)">
+    <!-- Outer Green Shape: Top-Left Sharp, Top-Right Round, Bottom-Right Sharp, Bottom-Left Round -->
+    <path d="M 5 5 H 60 A 35 35 0 0 1 95 40 V 95 H 40 A 35 35 0 0 1 5 60 Z" fill="none" stroke="#00994d" stroke-width="8" />
+    
+    <!-- Inner White Border Gap (simulated by spacing) -->
+    <!-- Inner Blue Shape -->
+    <path d="M 12 12 H 60 A 28 28 0 0 1 88 40 V 88 H 40 A 28 28 0 0 1 12 60 Z" fill="#1d428a" />
+    
+    <!-- 5/3 Text -->
+    <text x="50" y="70" font-family="sans-serif" font-weight="900" font-size="50" fill="white" text-anchor="middle">5/3</text>
+  </g>
+  
+  <!-- Bank Name Text -->
+  <text x="52" y="80" font-family="serif" font-size="9" fill="white" text-anchor="middle" letter-spacing="0.5">FIFTH THIRD BANK</text>
 
   <!-- Platinum Text -->
   <text x="315" y="45" font-family="sans-serif" font-size="20" fill="white" text-anchor="end" letter-spacing="2" font-weight="300">PLATINUM</text>
