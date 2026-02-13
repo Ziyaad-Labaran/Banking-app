@@ -47,7 +47,8 @@ const ProfilePage = () => {
                     )}
                 </div>
                 <h2 className="profile-name">{user.fullName}</h2>
-                <div className="profile-email">{user.jobTitle}</div>
+                <div className="profile-job">{user.jobTitle}</div>
+                <div className="profile-email">{user.email}</div>
                 <div className="profile-badge">Verified Member</div>
             </div>
 

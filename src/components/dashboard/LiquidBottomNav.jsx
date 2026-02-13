@@ -2,18 +2,26 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Home, Info, User, Settings } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
+import { useUser } from '../../context/UserContext';
 import '../../styles/LiquidBottomNav.css';
 
 const LiquidBottomNav = ({ links }) => {
     const location = useLocation();
     const [activeIndex, setActiveIndex] = useState(0);
     const { t } = useLanguage();
+    const { user } = useUser();
 
     // Default links if none provided, using exact labels and fallback icons from user request
     const navLinks = links || [
         { icon: <Home />, label: t('home'), path: '/dashboard' },
         { icon: <Info />, label: t('about'), path: '/dashboard/transactions' }, // Mapping to existing routes
-        { icon: <User />, label: t('profile'), path: '/dashboard/profile' },
+        {
+            icon: user.avatar ? (
+                <img src={user.avatar} style={{ width: 24, height: 24, borderRadius: '50%', objectFit: 'cover' }} alt="P" />
+            ) : <User />,
+            label: t('profile'),
+            path: '/dashboard/profile'
+        },
         { icon: <Settings />, label: t('settings'), path: '/dashboard/settings' },
     ];
 
