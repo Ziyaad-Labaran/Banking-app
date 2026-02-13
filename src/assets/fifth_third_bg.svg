@@ -1,0 +1,51 @@
+<svg width="340" height="210" viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="30%" r="80%" fx="50%" fy="30%">
+      <stop offset="0%" style="stop-color:#004d99;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#002855;stop-opacity:1" />
+    </radialGradient>
+    <linearGradient id="chipGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e0e0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f8f8f8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d0d0d0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="340" height="210" rx="16" ry="16" fill="url(#bgGradient)" />
+
+  <!-- Curves -->
+  <path d="M-10 80 Q 170 110 350 80" stroke="#0099ff" stroke-width="6" fill="none" opacity="0.8" />
+  <path d="M-10 90 Q 170 120 350 90" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.9" />
+  <path d="M-10 100 Q 170 130 350 100" stroke="#4caf50" stroke-width="8" fill="none" opacity="0.9" />
+  <path d="M-10 112 Q 170 142 350 112" stroke="#00509e" stroke-width="4" fill="none" opacity="0.7" />
+
+  <!-- 5/3 Logo Area -->
+  <rect x="25" y="25" width="40" height="40" rx="4" fill="#003366" stroke="#ffffff" stroke-width="2" />
+  <rect x="23" y="23" width="44" height="44" rx="6" stroke="#2dbf5b" stroke-width="2" fill="none" />
+  <text x="45" y="52" font-family="serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">5/3</text>
+  <text x="45" y="80" font-family="serif" font-size="9" fill="white" text-anchor="middle" letter-spacing="0.5">FIFTH THIRD BANK</text>
+
+  <!-- Platinum Text -->
+  <text x="315" y="45" font-family="sans-serif" font-size="20" fill="white" text-anchor="end" letter-spacing="2" font-weight="300">PLATINUM</text>
+
+  <!-- Chip -->
+  <rect x="30" y="90" width="45" height="35" rx="6" fill="url(#chipGradient)" stroke="#999" stroke-width="1" />
+  <line x1="30" y1="107" x2="75" y2="107" stroke="#999" stroke-width="1" />
+  <line x1="30" y1="116" x2="75" y2="116" stroke="#999" stroke-width="1" />
+  <line x1="45" y1="90" x2="45" y2="125" stroke="#999" stroke-width="1" />
+  <line x1="60" y1="90" x2="60" y2="125" stroke="#999" stroke-width="1" />
+  <rect x="48" y="103" width="10" height="9" rx="2" stroke="#999" stroke-width="1" fill="none" />
+
+  <!-- Name (Baked In) -->
+  <text x="30" y="185" font-family="monospace" font-size="16" fill="#e0e0e0" letter-spacing="2" style="text-shadow: 1px 1px 2px black;">NOOREEN COOLIDGE</text>
+
+  <!-- Expiry (Baked In) -->
+  <text x="175" y="180" font-family="sans-serif" font-size="6" fill="#ccc" text-anchor="end">VALID<tspan x="175" dy="7">THRU</tspan></text>
+  <text x="180" y="185" font-family="monospace" font-size="14" fill="#e0e0e0" letter-spacing="1" style="text-shadow: 1px 1px 2px black;">12/35</text>
+
+  <!-- Mastercard Logo -->
+  <circle cx="280" cy="175" r="18" fill="#eb001b" />
+  <circle cx="305" cy="175" r="18" fill="#f79e1b" opacity="0.85" />
+  <text x="330" y="202" font-family="sans-serif" font-size="8" fill="white" text-anchor="end" font-weight="bold">mastercard</text>
+</svg>

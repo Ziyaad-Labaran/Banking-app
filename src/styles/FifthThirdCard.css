@@ -1,228 +1,87 @@
 .fifth-third-card {
-    flex: 0 0 340px; /* Slightly wider for realism if space allows, or match existing 280px */
-    height: 210px;   /* Match aspect ratio roughly */
-    background: radial-gradient(circle at 50% 30%, #004d99, #002855 80%);
-    border-radius: 16px;
-    padding: 20px;
-    color: white;
+    flex: 0 0 280px;
+    height: 170px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    font-family: 'Courier New', Courier, monospace; /* Fallback for OCRA/Credit Card font */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* Background handled via inline style */
+    scroll-snap-align: start;
 }
 
-/* Background Curves */
-.card-curves {
+/* Toggle Button */
+.toggle-btn-overlay {
     position: absolute;
-    top: 35%;
-    left: -10%;
-    width: 120%;
-    height: 60px;
-    z-index: 1;
-    transform: rotate(-5deg);
-    pointer-events: none;
-}
-
-.curve-path {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.curve-1 { top: 0; height: 12px; background: #0099ff; opacity: 0.8; border-radius: 50%; width: 110%; left: -5%; }
-.curve-2 { top: 12px; height: 10px; background: #ffffff; opacity: 0.9; border-radius: 50%; width: 110%; left: -5%; }
-.curve-3 { top: 22px; height: 18px; background: #4caf50; opacity: 0.9; border-radius: 50%; width: 110%; left: -5%; }
-.curve-4 { top: 40px; height: 8px; background: #00509e; opacity: 0.7; border-radius: 50%; width: 110%; left: -5%; }
-
-
-/* Logo Section */
-.card-header {
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    z-index: 2;
-}
-
-.bank-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.bank-logo-icon {
-    width: 40px;   /* Approximate size */
-    height: 40px;
-    background: #002855;
-    border: 2px solid #4cae4c; /* Green border */
-    border-radius: 4px; /* Rounded corners */
-    display: flex; /* Flexbox for centering content */
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    font-family: sans-serif;
-    position: relative;
+    transition: all 0.2s ease;
+    z-index: 10;
 }
 
-.bank-logo-icon::after {
-    content: "5/3"; /* Text approximation */
-    color: white;
-    font-size: 16px;
+.toggle-btn-overlay:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
 }
 
-.bank-name {
-    font-family: 'Times New Roman', serif;
-    font-size: 10px;
-    margin-top: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.card-type-text {
-    font-family: sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 300;
-}
-
-/* Chip */
-.card-chip {
-    width: 45px;
-    height: 35px;
-    background: linear-gradient(135deg, #d4af37 0%, #f0e68c 50%, #d4af37 100%);
-    border-radius: 6px;
-    margin-top: 20px;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
-}
-
-.chip-line {
+/* Card Number Overlay */
+.card-number-overlay {
     position: absolute;
-    background: rgba(0,0,0,0.2);
-}
-.chip-line:nth-child(1) { width: 100%; height: 1px; top: 33%; }
-.chip-line:nth-child(2) { width: 100%; height: 1px; top: 66%; }
-.chip-line:nth-child(3) { width: 1px; height: 100%; left: 33%; }
-.chip-line:nth-child(4) { width: 1px; height: 100%; left: 66%; }
-.chip-center {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20px; height: 15px;
-    border: 1px solid rgba(0,0,0,0.2);
-    border-radius: 4px;
-}
-
-/* Number */
-.card-number-c {
-    font-size: 22px;
-    letter-spacing: 3px;
-    margin-top: 15px;
-    z-index: 2;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    top: 55%;
+    left: 0;
+    right: 0;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    width: 100%;
+    z-index: 5;
+    padding: 0 16px;
+    pointer-events: none;
+    /* Let clicks pass through if needed, though button is above */
 }
 
 .number-text {
-    font-family: "Courier Prime", monospace; /* Try to load a font if possible, else standard monospace */
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    color: #f1f5f9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
 }
 
-.toggle-btn {
-    background: none;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
-    margin-left: 10px;
-}
-.toggle-btn:hover {
-    color: white;
+.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Details */
-.card-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end; /* Align bottom */
-    margin-top: auto;
-    z-index: 2;
-    padding-bottom: 5px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.detail-group {
-    display: flex;
-    flex-direction: column;
-}
+@media (max-width: 400px) {
+    .fifth-third-card {
+        flex: 0 0 260px;
+        height: 160px;
+    }
 
-.detail-label {
-    font-size: 7px;
-    text-transform: uppercase;
-    opacity: 0.8;
-    margin-bottom: 2px;
-    font-family: sans-serif;
-}
-.detail-value {
-    font-size: 14px;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
-}
-.valid-thru-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.valid-label-stacked {
-    display: flex;
-    flex-direction: column;
-    font-size: 6px;
-    line-height: 1;
-    text-align: right;
-}
-
-/* Mastercard Logo */
-.mastercard-logo {
-    display: flex;
-    position: relative;
-    width: 50px;
-    height: 30px;
-}
-.circle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-}
-.circle-red {
-    background: #eb001b;
-    left: 0;
-    z-index: 1;
-}
-.circle-orange {
-    background: #f79e1b;
-    right: 0;
-    z-index: 2;
-    mix-blend-mode: screen; /* Or use opacity for overlap */
-    opacity: 0.85; /* Simple transparency if mix-blend not ideal */
-}
-.mastercard-text {
-    position: absolute;
-    bottom: -12px;
-    right: 0;
-    font-size: 8px;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: white;
+    .number-text {
+        font-size: 1.1rem;
+    }
 }
