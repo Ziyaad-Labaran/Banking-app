@@ -1,30 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Light Theme Defaults */
-  --color-primary: #3b82f6;
-  --color-dark: #242526;
-  --color-text: #333333;
-  --color-text-secondary: #666666;
-  --color-bg-light: #ffffff;
-  --color-bg-page: #f7f9fa;
-  --color-border: #e0e0e0;
-  --color-card-bg: #ffffff;
-  --font-family: 'Inter', sans-serif;
-  --radius-md: 8px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* Fifth Third Bank Brand Colors */
+  --color-primary: #00A3AD;
+  /* Action Teal */
+  --color-secondary: #164399;
+  /* Model Ultramarine */
+  --color-success: #509236;
+  /* Evergreen */
+
+  --color-text: #12283A;
+  /* Dark Blue */
+  --color-text-secondary: #5E6C84;
+
+  --color-bg-page: #FFFFFF;
+  /* Pure White */
+  --color-card-bg: #F7F9FA;
+  --color-border: #E0E0E0;
+
+  --font-family: 'Inter', 'Poppins', sans-serif;
+  --radius-md: 12px;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --transition-speed: 0.3s;
 }
 
-/* Dark Theme Overrides */
+/* Dark Mode - Banking Dark Theme */
 body.dark-mode {
-  --color-text: #eeeeee;
+  --color-bg-page: #0A1929;
+  /* Deep Navy */
+  --color-card-bg: #16212E;
+  /* Lighter Navy */
+  --color-text: #FFFFFF;
   --color-text-secondary: #94a3b8;
-  --color-bg-light: #121212;
-  --color-bg-page: #121212;
-  --color-border: #2d2d2d;
-  --color-card-bg: #1e1e1e;
+  --color-border: #243b53;
+
   background-color: var(--color-bg-page);
   color: var(--color-text);
 }
@@ -42,25 +52,53 @@ body {
   color: var(--color-text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Common utility for cards to respect theme */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-secondary);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #FFFFFF;
+}
+
+/* Common utility for cards to respect Fifth Third theme */
 .card,
 .balance-section,
 .transaction-section,
 .settings-header,
 .settings-group,
 .profile-header,
-.profile-section,
-.bottom-nav {
+.profile-section {
   background-color: var(--color-card-bg);
-  transition: background-color 0.3s;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-speed);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
 }
 
 /* Adjust toggle switch for dark mode */
 body.dark-mode .toggle-switch {
-  background-color: #475569;
+  background-color: #1e293b;
 }
 
 body.dark-mode .toggle-switch.active {
@@ -68,14 +106,14 @@ body.dark-mode .toggle-switch.active {
 }
 
 body.dark-mode .toggle-thumb {
-  background-color: #e2e8f0;
+  background-color: #f8fafc;
 }
 
 /* Input fields dark mode */
 body.dark-mode input {
-  background-color: #1e293b;
-  border-color: #334155;
-  color: #f1f5f9;
+  background-color: #16212e;
+  border-color: #243b53;
+  color: #FFFFFF;
 }
 
 /* Bottom nav dark mode tweaks */

@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 :root {
-    --bg-default: #121212;
-    /* Adjusted to match user's dark mode preference from previous turn, or #222327 as requested */
+    --bg-default: var(--color-bg-page);
     --primary-white: #ffffff;
-    --primary-red: #ff3c41;
+    --primary-teal: #00A3AD;
 }
 
 .liquid-nav-wrapper {
@@ -26,16 +25,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 0 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .navigation {
+    background: var(--color-card-bg);
 }
 
 .listWrap {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    /* Space them evenly */
     width: 100%;
     padding: 0;
     margin: 0;
@@ -67,7 +69,7 @@
     line-height: 75px;
     text-align: center;
     transition: 0.5s;
-    color: #222327;
+    color: var(--color-text);
 }
 
 .list .icon svg {
@@ -76,7 +78,7 @@
 
 .list .text {
     position: absolute;
-    color: #222327;
+    color: var(--color-text);
     font-weight: 400;
     letter-spacing: 0.05em;
     transition: 0.5s;
@@ -103,18 +105,16 @@
     height: 70px;
     top: -50%;
     border-radius: 50%;
-    border: 6px solid #f7f9fa;
-    /* Should match the body/page background */
-    background: var(--primary-red);
+    border: 6px solid var(--color-bg-page);
+    background: var(--primary-teal);
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 0;
     left: 20px;
-    /* Base padding offset */
 }
 
 /* Dark mode adjustment for indicator border */
 body.dark-mode .indicator {
-    border-color: #121212;
+    border-color: var(--color-bg-page);
 }
 
 .indicator::before,
@@ -129,22 +129,22 @@ body.dark-mode .indicator {
 
 .indicator::after {
     right: -22px;
-    box-shadow: -1px -10px 0 0 #f7f9fa;
+    box-shadow: -1px -10px 0 0 var(--color-bg-page);
     border-top-left-radius: 20px;
 }
 
 .indicator::before {
     left: -22px;
-    box-shadow: 1px -10px 0 0 #f7f9fa;
+    box-shadow: 1px -10px 0 0 var(--color-bg-page);
     border-top-right-radius: 20px;
 }
 
 body.dark-mode .indicator::after {
-    box-shadow: -1px -10px 0 0 #121212;
+    box-shadow: -1px -10px 0 0 var(--color-bg-page);
 }
 
 body.dark-mode .indicator::before {
-    box-shadow: 1px -10px 0 0 #121212;
+    box-shadow: 1px -10px 0 0 var(--color-bg-page);
 }
 
 /* Transition calculated via React style for precise centering */

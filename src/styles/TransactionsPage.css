@@ -41,7 +41,7 @@
 
 .search-bar input:focus {
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(255, 72, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 163, 173, 0.1);
 }
 
 .filter-tabs {
@@ -83,7 +83,8 @@
     padding: 16px;
     background-color: var(--color-card-bg);
     border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
 }
 
 .transaction-icon-lg {
@@ -98,9 +99,18 @@
     flex-shrink: 0;
 }
 
+body.dark-mode .transaction-icon-lg {
+    background-color: #1e293b;
+    color: #94a3b8;
+}
+
 .transaction-icon-lg.credit {
     background-color: #ecfdf5;
-    color: #10b981;
+    color: var(--color-success);
+}
+
+body.dark-mode .transaction-icon-lg.credit {
+    background-color: rgba(80, 146, 54, 0.1);
 }
 
 .transaction-icon-lg.debit {
@@ -131,11 +141,10 @@
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-text);
-    /* Default to dark text for debits */
 }
 
 .tx-amount-lg.positive {
-    color: #10b981;
+    color: var(--color-success);
 }
 
 .tx-bottom-row {
