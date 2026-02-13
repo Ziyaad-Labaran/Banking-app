@@ -61,7 +61,7 @@ const TransferPage = () => {
                         <h3>Recipient</h3>
                         <Input
                             label="Name or Email"
-                            placeholder="e.g. John Doe"
+                            placeholder="e.g. James parker"
                             icon={User}
                             {...register('recipient', { required: 'Recipient is required' })}
                             error={errors.recipient?.message}
