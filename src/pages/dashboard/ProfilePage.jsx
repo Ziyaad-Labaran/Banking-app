@@ -38,11 +38,11 @@ const ProfilePage = () => {
         <div className="profile-page">
             <div className="profile-header">
                 <div className="profile-avatar">
-                    <span>TM</span>
+                    <span>NC</span>
                 </div>
-                <h2 className="profile-name">Terry Morgan</h2>
-                <div className="profile-email">terry.morgan@example.com</div>
-                <div className="profile-badge">Premium Member</div>
+                <h2 className="profile-name">Noreen Coolidge</h2>
+                <div className="profile-email">Noreen Coolidge@gmail.com</div>
+                <div className="profile-badge">Verified Member</div>
             </div>
 
             {menuSections.map((section, index) => (

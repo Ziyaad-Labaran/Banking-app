@@ -6,7 +6,7 @@ import TransactionList from '../../components/dashboard/TransactionList';
 const DashboardPage = () => {
     return (
         <div className="dashboard-container">
-            <BalanceCard greeting="Good morning, Terry" balance="$3,200.00" />
+            <BalanceCard greeting="Good morning, Noreen" balance="$700,527.00" />
             <div className="quick-actions">
                 {/* Actions could go here or be part of the balance card as requested */}
             </div>

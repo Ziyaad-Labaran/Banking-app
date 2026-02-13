@@ -10,10 +10,10 @@ const EditProfilePage = () => {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
-            fullName: 'Terry Morgan',
-            email: 'terry.morgan@example.com',
+            fullName: 'Noreen Coolidge',
+            email: 'noreencoolidge@gmail.com',
             phone: '+1 (555) 0123-4567',
-            address: '123 Innovation Dr, Fintech City'
+            address: 'USA'
         }
     });
 
