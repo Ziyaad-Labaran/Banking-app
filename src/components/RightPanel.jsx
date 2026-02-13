@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import Input from './Input';
 import Button from './Button';
 import LanguageSelector from './LanguageSelector';
@@ -10,15 +11,18 @@ const RightPanel = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [loginError, setLoginError] = React.useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const { login } = useAuth();
+
+    // Check if we were redirected with a message
+    const redirectMessage = location.state?.message;
 
     const onSubmit = (data) => {
-        // Validate credentials
-        if (data.email === 'Salim123' && data.password === '505090') {
+        const success = login(data.email, data.password);
+        if (success) {
             setLoginError('');
-            // Simulate successful login
-            // alert('Login Successful! Welcome Noreen.');
-            console.log('Login successful:', data);
-            navigate('/dashboard');
+            const origin = location.state?.from?.pathname || '/dashboard';
+            navigate(origin);
         } else {
             setLoginError('Invalid username or password');
         }
@@ -34,6 +38,22 @@ const RightPanel = () => {
                     </div>
                     <h2 className="auth-title">Sign In</h2>
                 </div>
+
+                {redirectMessage && (
+                    <div style={{
+                        padding: '12px',
+                        backgroundColor: '#fffbeb',
+                        border: '1px solid #fef3c7',
+                        borderRadius: '8px',
+                        color: '#92400e',
+                        fontSize: '0.875rem',
+                        marginBottom: '16px',
+                        textAlign: 'center',
+                        fontWeight: '500'
+                    }}>
+                        {redirectMessage}
+                    </div>
+                )}
 
                 {loginError && (
                     <div className="login-error">
