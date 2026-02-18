@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">First3bank</string>
+    <string name="title_activity_main">First3bank</string>
+    <string name="package_name">com.ziyaad.first3bank</string>
+    <string name="custom_url_scheme">com.ziyaad.first3bank</string>
+</resources>
